@@ -13,9 +13,9 @@ const tsc = resolve(root, "node_modules", ".bin", "tsc");
 
 if (!existsSync(tsc)) {
   process.stderr.write(
-    `devDependencies not installed; running \`npm ci --omit=dev=false\` in ${root}\n`,
+    `devDependencies not installed; running \`npm ci\` in ${root}\n`,
   );
-  const install = spawnSync("npm", ["ci", "--omit=dev=false"], {
+  const install = spawnSync("npm", ["ci"], {
     stdio: "inherit",
     cwd: root,
   });
